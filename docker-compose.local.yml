@@ -1,0 +1,8 @@
+services:
+  api:
+    build: ./backend
+    ports: ["8000:8000"]
+    env_file: ./backend/.env
+    restart: unless-stopped
+  # Supabase cloud is used for Auth/Postgres/Storage in the main deployment.
+  # This file keeps the API containerized for a reproducible local development setup.
